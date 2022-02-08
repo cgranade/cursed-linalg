@@ -1,0 +1,27 @@
+[package]
+name = "cursed-linalg"
+version = "0.0.1-alpha.1"
+edition = "2021"
+
+authors = ["Cassandra Granade <cgranade@cgranade.dev>"]
+repository = "https://github.com/cgranade/cursed-linalg"
+description = "It's not BLASed, it's cursed!"
+license = "MIT"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cauchy = "0.4.0"
+miette = "3.3.0"
+ndarray = "0.15.4"
+num-complex = "0.4.0"
+num-traits = "0.2.14"
+thiserror = "1.0.30"
+
+[dev-dependencies]
+approx = { version = "0.5.1", features = ["num-complex"] }
+ndarray = { version = "0.15.4", features = ["approx"] }
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--html-in-header", "docs-includes/header.html", "--html-after-content", "docs-includes/after.html"]
