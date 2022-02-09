@@ -33,6 +33,7 @@ where
     fn inv(&self) -> Result<Self::Output, Self::Error> {
         // TODO: Check determinant here.
         let lu = self.lu()?;
+        // TODO: Change to use Identity trait.
         let id_mtx = Array2::from_diag(&Array1::ones(lu.order()));
         lu.solve_matrix(&id_mtx)
     }
